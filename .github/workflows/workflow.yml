@@ -21,7 +21,20 @@ jobs:
         run: |
          flake8 service --count --select=E9,F63,F7,F82 --show-source --statistics
          flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
+
       - name: Rujn unit tests with nose
         run: |
          nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
+      
+      - name: Upload code coverage
+        uses: codecov-action@v2
+        with:
+          token: $ {{secrets.CODCOV_TOKEN}} #not required for public repos
+          files: ./coverage1.xml
+          flags: unittests
+          fail_ci_if_error: true
+          verboe: true
+          version: "v0.1.13"
+
+
       
