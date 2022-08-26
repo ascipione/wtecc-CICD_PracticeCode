@@ -27,7 +27,7 @@ jobs:
          nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
       
       - name: Upload code coverage
-        uses: codecov-action@v2
+        uses: codecov/codecov-action@v2
         with:
           token: $ {{secrets.CODCOV_TOKEN}} #not required for public repos
           files: ./coverage1.xml
