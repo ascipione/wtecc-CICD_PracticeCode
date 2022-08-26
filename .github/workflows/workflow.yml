@@ -33,7 +33,7 @@ jobs:
           files: ./coverage1.xml
           flags: unittests
           fail_ci_if_error: true
-          verboe: true
+          verbose: true
           version: "v0.1.13"
 
 
