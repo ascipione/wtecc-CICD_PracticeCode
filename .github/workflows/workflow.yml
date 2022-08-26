@@ -1,0 +1,10 @@
+name: CI_workflow
+on:
+  push: 
+    braches: ['main']
+  pull_request:
+    braches: ['main']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: python:3.9-slim 
